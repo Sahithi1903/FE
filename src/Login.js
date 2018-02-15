@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Login extends Component
 {
     constructor(props){
@@ -7,6 +8,7 @@ class Login extends Component
         this.state={
             username:"",
             password:"",
+            isLoggedIn:"false",
             json : [] ,
          }
 
@@ -15,6 +17,7 @@ class Login extends Component
          this.handlePasswordChange=this.handlePasswordChange.bind(this);
          
         }
+    
 
     handleSubmit(event) {
         event.preventDefault();
@@ -24,22 +27,40 @@ class Login extends Component
          
         var uname = document.getElementById('name').value;
         var upwd  = document.getElementById('pwd').value;
+        var accessToken,refreshtoken,expirytime;
         var urole = 'Admin';
-        var form = JSON.stringify({username : uname,password : upwd, role : urole});
-        fetch ( "http://10.10.200.39:9000/Users" , 
+        var form = JSON.stringify({username : uname, password : upwd, role : urole});
+        fetch ( "http://10.10.200.39:9000/userver" , 
         {
-            method: "POST" ,
+            method: "POST",     
             headers: {
                 "Content-Type": "application/json",
                 "Accept"    :   "application,json"
                 
-              },
+              },       
+            body: form, 
+    }).then(result1=>result1.json())
+    .then(function(result1){
+        //accesstoken=window.localStorage.getItem('result1.access_token');
+        //expirytime=window.localStorage.getItem('response.expiry_time');
+        //refreshtoken=window.localStorage.getItem('response.refresh_token');
+        
+        console.log(result1);
+        accessToken = result1.access_token;
+        console.log(accessToken);
+        localStorage.setItem("accessToken",result1.access_token);
+        result1.access_token=localStorage.getItem("accessToken");
+        module.exports={data:"accessToken"};
 
-            body:form , 
+        
+    })
+    .catch(function(error){
+        console.log(error);
     });
-    console.log(form);
-
+        console.log(form);
+    
     }
+    
 
     handleUsernameChange(event) {
         this.setState({
@@ -65,7 +86,7 @@ class Login extends Component
           
             placeholder="Enter User Name" 
             onChange={this.handleUsernameChange} 
-            value={this.state.username} />
+            value={this.state.username} required/>
             
             <p>Password</p>
             <input type="password" 
@@ -73,7 +94,7 @@ class Login extends Component
            
             placeholder="*******" 
             onChange={this.handlePasswordChange} 
-            value={this.state.password}/>
+            value={this.state.password} required/>
             
             <input type="submit" className="" value="Login In" />
             <a href="#">Sign In</a>
