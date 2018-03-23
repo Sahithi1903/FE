@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Usericons extends Component
 {
+    
     render(){
         return(
             <div className="Icons">

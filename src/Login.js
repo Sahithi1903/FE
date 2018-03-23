@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-
+import {
+    Route,
+    NavLink,
+    HashRouter
+} from "react-router-dom";
+import Topmenu2 from './Topmenu2';
+import Forgotp from './Forgotp';
+import Signup from './Signup';
+import Hp2 from './Hp2';
+import ReactDOM from 'react-dom';
 
 class Login extends Component
 {
@@ -30,7 +39,7 @@ class Login extends Component
         var accessToken,refreshtoken,expirytime;
         var urole = 'Admin';
         var form = JSON.stringify({username : uname, password : upwd, role : urole});
-        fetch ( "http://10.10.200.39:9000/userver" , 
+        fetch ( "http://10.10.200.39:9000/users/login" , 
         {
             method: "POST",     
             headers: {
@@ -51,6 +60,8 @@ class Login extends Component
         localStorage.setItem("accessToken",result1.access_token);
         result1.access_token=localStorage.getItem("accessToken");
         module.exports={data:"accessToken"};
+        
+        
 
         
     })
@@ -76,6 +87,7 @@ class Login extends Component
 
     render(){
         return(
+            <HashRouter>
             <div className="loginBox">
             <h2> Log in Here</h2>
             <form onSubmit={this.handleSubmit}>
@@ -97,9 +109,25 @@ class Login extends Component
             value={this.state.password} required/>
             
             <input type="submit" className="" value="Login In" />
-            <a href="#">Sign In</a>
+            <a href="#"><NavLink to="/Signup">Sign Up</NavLink></a><br></br>
+            
+            <a href="#"><NavLink to="/Forgotp">Forgot password</NavLink></a><br/>
+            <a href="#"><NavLink to="/Hp2"><font color="black">F</font></NavLink></a>
+            
+            <a href="#"><NavLink to="/Hp2"></NavLink></a>
+            
+           
+
+            <div className="content">
+            <Route path="/Forgotp" component={Forgotp}/>
+            <Route path="/Signup" component={Signup}/>
+            <Route path="/Hp2" component={Hp2}/>
+            </div>
+           
           </form>
+         
           </div>
+          </HashRouter>
 
         );
     }

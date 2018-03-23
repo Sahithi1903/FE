@@ -41,3 +41,18 @@ body {
   opacity: 1;
   right: 0;
 }
+
+#root, #latlong, #map {
+  height: 100%;
+}
+
+#state {
+  width: 200px;
+  float: left;
+}
+
+#map {
+  margin-left: 200px;
+  height: 440px; border: 1px solid #AAA;
+}
+

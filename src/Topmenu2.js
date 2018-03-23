@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 import SurveyList from './SurveyList';
-import Add from './Add';
-import Googlemap from './Googlemap';
 import Edform1 from './Edform1';
 import {
     Route,
@@ -15,7 +13,7 @@ import Stuff from "./Stuff";
 import Contact from "./Contact";
 
 
-class Topmenu extends Component {
+class Topmenu2 extends Component {
 
     constructor() {
         super();
@@ -45,13 +43,7 @@ class Topmenu extends Component {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
                 <link rel="stylesheet" href="box.css" />
-                {/*<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-                    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-                    crossorigin="" />
-                <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-                    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-        crossorigin=""></script>*/}
-
+                
 
                 <HashRouter>
                     <div >
@@ -68,29 +60,25 @@ class Topmenu extends Component {
                         </div>
 
 
-                        <button class="btn"><NavLink to="/Googlemap"><i class="fa fa-trash"></i> Trash</NavLink></button>
+                        <button class="btn"><NavLink to="/SurveyList"><i class="fa fa-trash"></i> Trash</NavLink></button>
                         <div class="topnav-right">
 
-                            <button class="btn" /*onClick={this.handle2.bind(this)}*/><NavLink to="/Login"><i class="fa fa-folder"></i> Login</NavLink></button>
+                            <button class="btn" /*onClick={this.handle2.bind(this)}*/><NavLink to="/Login"><i class="fa fa-folder"></i> Profile</NavLink></button>
 
                             {/*{this.state.second == false && this.state.first == true && <Login />}*/}
 
 
 
 
-                            <button class="btn" /*onClick={this.handle1.bind(this)}*/><NavLink to="/Signup"><i class="fa fa-folder"></i> Signup</NavLink></button>
-                            { /*{this.state.first == false && <Signup />}*/}
-
-
+                            
+   
 
                         </div>
                         <div className="content">
 
-                            <Route path="/Stuff" component={Stuff} />
-
-                            <Route path="/Googlemap" component={Googlemap} />
-                            <Route path="/Signup" component={Signup} />
-                            <Route path="/Login" component={Login} />
+                            <Route path="/Stuff" component={Stuff} /> 
+                            <Route path="/SurveyList" component={SurveyList} />
+                            <Route path="/Login" component={Login}/>
                         </div>
 
                     </div>
@@ -171,4 +159,4 @@ class Topmenu extends Component {
 
 }
 
-export default Topmenu;
+export default Topmenu2;

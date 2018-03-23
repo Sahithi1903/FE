@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Edform1  from './Edform1';
+import Contact  from './Contact';
 import Topmenu  from './Topmenu';
+import Add2  from './Add2';
 //import Signup  from './Signup';
-import Login  from './Login';
-import Mapan1  from './Mapan1';
+
+import Hp2  from './Hp2';
+import Hp  from './Hp';
+import Mma  from './Mma';
+import Surveyform  from './Surveyform';
+import RoleUp  from './RoleUp';
+import Chrt  from './Chrt';
+import Gm  from './Gm';
+
+
+
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Topmenu />
+        <Gm/>
       </div>
     );
   }
