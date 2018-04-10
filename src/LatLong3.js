@@ -85,8 +85,10 @@ export default class Latlong3 extends React.Component {
                         <b>Reviews:</b><br/>A temple with more than one god<br/><br/>
                     </p>
                 </div>
+                <br/>
+                <br/>
                 <div id='pac-container'>
-                    <input id='pac-input' type='text' placeholder='Enter a location' />
+                   
                 </div>
                 <div id='map' />
             </div>

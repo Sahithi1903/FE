@@ -1,22 +1,20 @@
-import React,{Component} from 'react';
+/*import React,{Component} from 'react';
 import Login from './Login.js'
 
-class Surveyform extends Component
+class Surveyform2 extends Component
 {
     constructor(props){
         super(props);
         this.state={
            name:"",
-           description:"",
-            state:"",
             
             json : [] ,
          }
 
          this.handleSubmit=this.handleSubmit.bind(this);
          this.handleNameChange=this.handleNameChange.bind(this);
-         this.handleDescriptionChange=this.handleDescriptionChange.bind(this);
-         this.handleStateChange=this.handleStateChange.bind(this);
+         //this.handleDescriptionChange=this.handleDescriptionChange.bind(this);
+         //this.handleStateChange=this.handleStateChange.bind(this);
         }
         handleSubmit(event) {
 
@@ -26,20 +24,20 @@ class Surveyform extends Component
                 value:event.target.value,
             });
             var name = document.getElementById('name').value;
-            var description = document.getElementById('description').value;
-            var state = document.getElementById('state').value;
+            //var description = document.getElementById('description').value;
+            //var state = document.getElementById('state').value;
             var Login=require('./Login.js');
             var accessToken = localStorage.getItem("accessToken");
-            var id=7;
+            //var id=7;
             //var str=Login.data;
             //var accesstoken=JSON.stringify(str);
             console.log(Login.accessToken);            
-            var form1 = JSON.stringify({name : name,description : description,state : state,});
-            console.log(id);
-            fetch ("http://10.10.200.39:9000/surveys/:id", 
+            var form1 = JSON.stringify({name : name,});
+            //console.log(id);
+            fetch ("http://10.10.200.39:9000/surveys", 
             {
                 
-                method: "POST" ,
+                method: "DELETE" ,
                 headers: {
                     "Content-Type": "application/json",
                     "Accept"    :   "application,json",
@@ -65,7 +63,7 @@ class Surveyform extends Component
             })
         }
     
-        handleDescriptionChange(event) {
+        /*handleDescriptionChange(event) {
             this.setState({
                 description:event.target.value,
             })
@@ -73,11 +71,12 @@ class Surveyform extends Component
         handleStateChange(event) {
             this.setState({
                 state:event.target.value,
-            })
-        }    
-    render(){
+            })*/
+            
+    /*render(){
+        console.log("in sf2");
      return(
-         <div className="chartBox">
+         <div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -85,32 +84,16 @@ class Surveyform extends Component
        <div className="container">
       <form onSubmit={this.handleSubmit}>
 
-      <p><font color="black">Name</font></p>
+      <p>Name</p>
         <input type="text" 
         id="name" 
         placeholder="Your survey name.."
         onChange={this.handleNameChange} 
         value={this.state.name}/>
     
-
-        <p><font color="black">Description</font></p>
-        <input className="" 
-        type="text" id="description" 
-        placeholder="Your description"
-        onChange={this.handleDescriptionChange} 
-        value={this.state.description}/>
-
-        
-        <p><font color="black">State</font></p>
-        <input type="text" 
-        id="state" 
-        placeholder="Your location....."
-        onChange={this.handleStateChange} 
-        value={this.state.state}/><br/><br/><br/>
-        <br/><br/>
        
         <input type="submit" 
-        value="Add"
+        value="Delete"
         />
       </form>
     </div>
@@ -119,4 +102,4 @@ class Surveyform extends Component
 
     }
 }
-export default Surveyform;
+export default Surveyform2;*/

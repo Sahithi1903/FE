@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Login from './Login.js';
 import Surveyform from './Surveyform.js';
+//import Surveyform2 from './Surveyform2.js';
 import Edform1 from './Edform1.js';
 import Add3 from './Add3.js';
 import Add4 from './Add4.js';
@@ -11,6 +12,13 @@ import RoleUp from './RoleUp';
 import LatLong3 from './LatLong3';
 import LatLong4 from './LatLong4';
 import LatLong5 from './LatLong5';
+import Gm from './Gm';
+import Chrt from './Chrt';
+import Sdel from './Sdel';
+import Sdel2 from './Sdel2';
+import Add5 from './Add5';
+import img from './Images/survey3.jpeg';
+import img2 from './Images/survey2.jpeg';
 
 
 
@@ -120,7 +128,7 @@ class Add extends React.Component {
                             <ul>
                                 <li>
 
-                                   <button><Link to="/Add2">
+                                   <button type="button"><Link to="/Add2">
 
                                         {/*<img src={rPos} id="im" />*/}<font color="black">
                                         {sName}<br></br>
@@ -193,14 +201,14 @@ class Add extends React.Component {
                 <link rel="stylesheet" href="box.css" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-                <div className="loginBox">
+                <div className="surveyBox">
 
                 <div >
                     <div>
                         <div>
                             <form>
                                 <br />
-                                <h2><font color="white">SurveyList</font></h2>
+                                <h2><font color="black">Surveys </font></h2>
 
 
 
@@ -212,14 +220,19 @@ class Add extends React.Component {
                                     </div>
                                 </div>
                                 {/*<button><NavLink to="/Surveyform">Add</NavLink></button><br></br>*/}
-                                <a href=""><NavLink to="/Add4">Next</NavLink></a><br></br>
-                                <a href=""><NavLink to="/RoleUp">Ne</NavLink></a><br></br>
+                                <a href=""><NavLink to="/Add4"><font color="black">Next</font></NavLink></a><br></br>
+                                {/*<a href=""><NavLink to="/RoleUp">Ne</NavLink></a><br></br>*/}
+
+
+                                <img src={img} height={250} width={400} /><br/><br/><br/>
+                                <img src={img2} height={250} width={400} />
                                 
                                 <div className="content">
            
             <Route path="/Add2" component={Add2}/>
             <Route path="/Add4" component={Add4}/>
             <Route path="/Surveyform" component={Surveyform}/>
+            {/*<Route path="/Surveyform2" component={Surveyform2}/>*/}
             <Route path="/Edform1" component={Edform1}/>
             <Route path="/Add3" component={Add3} />
             <Route path="/LatLong2" component={LatLong2} />
@@ -228,6 +241,11 @@ class Add extends React.Component {
             <Route path="/LatLong3" component={LatLong3} />
                             <Route path="/LatLong4" component={LatLong4} />
                             <Route path="/LatLong5" component={LatLong5} />
+                            <Route path="/Gm" component={Gm} />
+                            <Route path="/Chrt" component={Chrt} />
+                            <Route path="/Sdel" component={Sdel} />
+                            <Route path="/Sdel2" component={Sdel2} />
+                            <Route path="/Add5" component={Add5} />
             </div>
                                 {/*<div class="panel-group">
                                 <div class="panel panel-default">

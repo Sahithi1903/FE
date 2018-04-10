@@ -8,7 +8,7 @@ class Add3 extends React.Component {
         super();
 
         this.state = {
-          survey3: [],
+          survey2: [],
         
         }
         
@@ -19,35 +19,32 @@ class Add3 extends React.Component {
       
  
     componentWillMount(){
-        var Login=require('./Login.js');
-        var accessToken = localStorage.getItem("accessToken");
-        var m=this.props.match.params.survey3;
-        var Add2=require('./Add2.js');
-        var p = localStorage.getItem("p");
+        
+        var m=this.props.match.params.id;
         console.log(m);
         var form=JSON.stringify({id:m});
         console.log(1);
         console.log(form);
-        if(form!="{}")
-        {
+        var Login = require('./Login.js');
+        var accessToken = localStorage.getItem("accessToken");
+        
+        
             console.log(form);
-            fetch('http://10.10.200.39:9000/form/:m',
+            fetch('http://10.10.200.39:9000/form',
                 {
-                    method: 'GET',
+                    method: 'POST',
                     headers: {
                         "Content-Type": "application/json",
                         "Accept": "application/json",
+                        "Authorization": 'Bearer' + accessToken,
                         
                     },
-                    
+                    body: form,
                 })
-                .then(function (response) {
-
-                    return (response.json());
-                })
-                .then((json) => this.setState({ survey3: json }));
+                .then(response => response.json())
+                .then((survey2) => this.setState({ survey2: survey2 }));
                 
-            }
+            
        
         console.log(2);
     }
@@ -56,7 +53,7 @@ class Add3 extends React.Component {
            
         
        
-        var surveys3 = this.state.survey3;
+        var surveys3 = this.state.survey2;
         var flag=0;
         console.log("REACHED HERE!!!!")
         console.log(surveys3);
@@ -71,11 +68,11 @@ class Add3 extends React.Component {
                 <br />
                 <br />
 
-                <div className="container-fluid">
+                <div className="loginBox">
 
                     
                                     
-                                    <h1 id="h">{surveys3.address}</h1><br />
+                                    <h1>{surveys3.address}</h1><br />
 
                                 
                                 

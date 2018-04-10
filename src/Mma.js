@@ -60,7 +60,7 @@ class Mma extends Component {
                     <input type="submit" className="" value="Make Admin" />
                    
                 </form>
-                <b>You are now an admin</b><br/>
+                <b>You will be now made an admin</b><br/>
                 <b>Login Again</b><br/><br/>
                 
 

@@ -85,8 +85,10 @@ export default class Latlong4 extends React.Component {
                         <b>Reviews:</b><br/>Famous historical temple constructed by Kakathiya kings<br/><br/>
                     </p>
                 </div>
+                <br/>
+                <br/>
                 <div id='pac-container'>
-                    <input id='pac-input' type='text' placeholder='Enter a location' />
+                   
                 </div>
                 <div id='map' />
             </div>

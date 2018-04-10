@@ -7,6 +7,9 @@ import {
 import Signup from './Signup';
 import Login from './Login';
 import img from './Images/bg3.jpg';
+import img13 from './Images/13.jpg';
+import img14 from './Images/14hp.jpg';
+import img15 from './Images/15hp.jpg';
 import Add from './Add';
 import Add2 from './Add2';
 import Mma from './Mma';
@@ -22,6 +25,11 @@ import LatLong3 from './LatLong3';
 import LatLong4 from './LatLong4';
 import LatLong5 from './LatLong5';
 import Hp from './Hp';
+import Gm from './Gm';
+import Chrt from './Chrt';
+import Sdel from './Sdel';
+import Sdel2 from './Sdel2';
+import Add5 from './Add5';
 
 class Hp2 extends Component {
     render() {
@@ -78,6 +86,11 @@ class Hp2 extends Component {
                             <Route path="/LatLong4" component={LatLong4} />
                             <Route path="/LatLong5" component={LatLong5} />
                             <Route path="/Hp" component={Hp} />
+                            <Route path="/Gm" component={Gm} />
+                            <Route path="/Chrt" component={Chrt} />
+                            <Route path="/Sdel" component={Sdel} />
+                            <Route path="/Sdel2" component={Sdel2} />
+                            <Route path="/Add5" component={Add5} />
                                     
                                     
                                     
@@ -88,7 +101,7 @@ class Hp2 extends Component {
 
 
                     <div>
-                        <img src={img} />
+                        <img src={img} height={1500} width={2800}/>
 
                     </div>
 
@@ -114,15 +127,15 @@ class Hp2 extends Component {
                         <div class="w3-row w3-padding-32">
                             <div class="w3-third">
                                 <p>Temples</p>
-                                <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" />
+                                <img src={img13} class="w3-round w3-margin-bottom" alt="Random Name" />
                             </div>
                             <div class="w3-third">
                                 <p>Irrigation</p>
-                                <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" />
+                                <img src={img14} class="w3-round w3-margin-bottom" alt="Random Name" />
                             </div>
                             <div class="w3-third">
                                 <p>Education</p>
-                                <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" />
+                                <img src={img15} class="w3-round" alt="Random Name" />
                             </div>
                         </div>
                     </div>
@@ -144,16 +157,16 @@ class Hp2 extends Component {
 
                             <div class="w3-row-padding w3-padding-32" >
                                 <div class="w3-third w3-margin-bottom">
-                                    <img src="/w3images/newyork.jpg" alt="Temples" class="w3-hover-opacity" />
+                                    <img src={img13} alt="Temples" class="w3-hover-opacity" />
                                     <div class="w3-container w3-white">
                                         <p><b>Temples</b></p>
                                         <p class="w3-opacity">Fri 27 Nov 2016</p>
                                         <p>A survey for recording temple development plan has been added.</p>
-                                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Respond</button>
+                                        <button class="w3-button w3-black w3-margin-bottom" ><NavLink to="/Edform1">Respond</NavLink></button>
                                     </div>
                                 </div>
                                 <div class="w3-third w3-margin-bottom">
-                                    <img src="/w3images/paris.jpg" alt="Irrigation" class="w3-hover-opacity" />
+                                    <img src={img14} alt="Irrigation" class="w3-hover-opacity" />
                                     <div class="w3-container w3-white">
                                         <p><b>Irrigation</b></p>
                                         <p class="w3-opacity">Sat 28 Nov 2016</p>
@@ -162,7 +175,7 @@ class Hp2 extends Component {
                                     </div>
                                 </div>
                                 <div class="w3-third w3-margin-bottom">
-                                    <img src="/w3images/sanfran.jpg" alt="Education" class="w3-hover-opacity" />
+                                    <img src={img15} alt="Education" class="w3-hover-opacity" />
                                     <div class="w3-container w3-white">
                                         <p><b>Education</b></p>
                                         <p class="w3-opacity">Sun 29 Nov 2016</p>
@@ -187,7 +200,7 @@ class Hp2 extends Component {
                                 <input class="w3-input w3-border" type="text" placeholder="How many?" />
                                 <p><label><i class="fa fa-user"></i> Temple</label></p>
                                 <input class="w3-input w3-border" type="text" placeholder="Enter email" />
-                                <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">Respond  <i class="fa fa-check"></i></button>
+                                <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">Respond <i class="fa fa-check"></i></button>
                                 <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
                                 <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
                             </div>

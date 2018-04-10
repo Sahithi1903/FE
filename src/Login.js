@@ -50,25 +50,36 @@ class Login extends Component
             body: form, 
     }).then(result1=>result1.json())
     .then(function(result1){
-        //accesstoken=window.localStorage.getItem('result1.access_token');
-        //expirytime=window.localStorage.getItem('response.expiry_time');
-        //refreshtoken=window.localStorage.getItem('response.refresh_token');
+        window.alert("Login successful");
+        accessToken=window.localStorage.getItem('result1.access_token');
+        expirytime=window.localStorage.getItem('response.expiry_time');
+        refreshtoken=window.localStorage.getItem('response.refresh_token');
         
         console.log(result1);
         accessToken = result1.access_token;
         console.log(accessToken);
         localStorage.setItem("accessToken",result1.access_token);
-        result1.access_token=localStorage.getItem("accessToken");
-        module.exports={data:"accessToken"};
+        //result1.access_token=localStorage.getItem("accessToken");
+        //module.exports={data:"accessToken"};
+        window.location.href="./Hp2";
+        <Route path="/Hp2" exact component={Hp2}/>
+        
         
         
 
         
+    }).then(function(data1){
+        if(data1.role=="user")
+        window.location.href="./Hp2";
+        else
+        window.location.href="./Hp2";
+
     })
     .catch(function(error){
-        console.log(error);
+       //window.alert("please enter correct details");
+       console.log(error);
     });
-        console.log(form);
+        //console.log(form);
     
     }
     
@@ -108,10 +119,10 @@ class Login extends Component
             onChange={this.handlePasswordChange} 
             value={this.state.password} required/>
             
-            <input type="submit" className="" value="Login In" />
+            <input type="submit" className="" value="Login In"/>
             <a href="#"><NavLink to="/Signup">Sign Up</NavLink></a><br></br>
             
-            <a href="#"><NavLink to="/Forgotp">Forgot password</NavLink></a><br/>
+            {/*<a href="#"><NavLink to="/Forgotp">Forgot password</NavLink></a><br/>*/}
             <a href="#"><NavLink to="/Hp2"><font color="black">F</font></NavLink></a>
             
             <a href="#"><NavLink to="/Hp2"></NavLink></a>

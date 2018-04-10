@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Login from './Login.js';
 import Surveyform from './Surveyform.js';
+//import Surveyform2 from './Surveyform2.js';
 import Edform1 from './Edform1.js';
 import Add3 from './Add3.js';
+import Add5 from './Add5.js';
 import LatLong2 from './LatLong2';
+import Sdel from './Sdel';
+import Sdel2 from './Sdel2';
 
 
 import {
@@ -14,6 +18,8 @@ import {
 } from "react-router-dom";
 import Add2 from './Add2.js';
 import Signup from './Signup.js';
+import img from './Images/survey3.jpeg';
+import img2 from './Images/survey2.jpeg';
 //import MovieInfo from './MovieInfo.js';
 //import "./Add.css";
 //import { Grid, Row, Col} from 'react-bootstrap';
@@ -113,12 +119,11 @@ class Add4 extends React.Component {
                             <ul className="nav navbar-nav navbar-right">
                                 <li>
 
-                                   <button><Link to="/Add2">
+                                   <button><Link to="/Add5">
 
                                         {/*<img src={rPos} id="im" />*/}<font color="black">
                                         {sName}<br></br>
-                                        {sDesc}<br></br>
-                                        {sState}<br></br>
+                                        
 </font>
 
 
@@ -187,14 +192,14 @@ class Add4 extends React.Component {
                 <link rel="stylesheet" href="box.css" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-                <div className="loginBox">
+                <div className="surveyBox">
 
                 <div className="container detail" id="cont">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 detail hello" id="hh">
                             <form className="form-horizontal" role="form" id="detForm">
                                 <br />
-                                <h2>SurveyList</h2>
+                                <h2><font color="black" >Surveys</font></h2>
 
 
 
@@ -205,19 +210,25 @@ class Add4 extends React.Component {
                                         <div class="panel-body" id="a">{surveyList}</div>
                                     </div>
                                 </div>
-                                <button><NavLink to="/Surveyform">Add</NavLink></button>
-                                <button><NavLink to="/Surveyform">Delete</NavLink></button>
-                                <button><NavLink to="/Surveyform">Update</NavLink></button>
+                                <button><NavLink to="/Surveyform">Add</NavLink></button><br/><br/>
+                                <button><NavLink to="/Sdel">Delete</NavLink></button><br/><br/>
+                                <button><NavLink to="/Surveyform">Update</NavLink></button><br/><br/>
 
-                                <a href="#"><NavLink to="/Add2">Next</NavLink></a><br></br>
+                                <a href="#"><NavLink to="/Add5"><font color="white">Next</font></NavLink></a><br></br>
+                                <img src={img} height={250} width={400} /><br/><br/><br/>
+                                <img src={img2} height={250} width={400} />
                                 
                                 <div className="content">
            
             <Route path="/Add2" component={Add2}/>
+            <Route path="/Add5" component={Add5}/>
             <Route path="/Surveyform" component={Surveyform}/>
+            {/*Route path="/Surveyform" component={Surveyform2}/>*/}
             <Route path="/Edform1" component={Edform1}/>
             <Route path="/Add3" component={Add3} />
             <Route path="/LatLong2" component={LatLong2} />
+            <Route path="/Sdel" component={Sdel} />
+            <Route path="/Sdel2" component={Sdel2} />
             </div>
                                 {/*<div class="panel-group">
                                 <div class="panel panel-default">

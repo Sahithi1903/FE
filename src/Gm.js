@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Map, Marker, Popup, TileLayer, Polyline } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, Polyline,CircleMarker } from 'react-leaflet';
 import request from 'superagent';
 class Gm extends React.Component{
   constructor(props) {
@@ -11,7 +11,8 @@ class Gm extends React.Component{
         "gnit":[17.4118166,78.3967619],
         "charminar":[17.3615687,78.4724758]
         */
-      markers:[]
+      markers:[],
+      arrColour: [],
       }
     
   //  this.ComponentDidMount = this.ComponentDidMount.bind(this);
@@ -45,32 +46,43 @@ class Gm extends React.Component{
   }
 
 render(){
+  for (var i = 0; i < this.state.markers.length; i++) {
+    if(this.state.markers[i].visitors>300)
+    this.state.arrColour.push("red");
+    else
+    this.state.arrColour.push("blue");    
+}
+console.log(this.state.arrColour[2]);
 return(
+  <div className="chartBox">
 
   <Map center={{ lat: 17.3850,lng: 78.4867}} zoom={15}>
     <TileLayer
       url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       attribution='&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors'
     />
-     {this.state.markers.map((marker,i) => (
-    <Marker position={{ lat: marker.latitude,lng: marker.longitude}}>
+    
+     {this.state.markers.map((j,i) => (
+       console.log(i),
+    <CircleMarker center={{ lat: j.latitude,lng: j.longitude}} radius={8} color={this.state.arrColour[i]}>
       <Popup>
         <span>
-        <b>Name:</b>{marker.name}<br/>
-        <b>Timings:</b>{marker.timings}<br/>
-        <b>Entryfee:</b>{marker.entryFee}<br/>
-        <b>Visitors:</b>{marker.visitors}<br/>
-        <b>Reviews:</b>{marker.reviews}<br/>
-        <b>Address:</b>{marker.address}<br/>
+        <b>Name:</b>{j.name}<br/>
+        <b>Timings:</b>{j.timings}<br/>
+        <b>Entryfee:</b>{j.entryFee}<br/>
+        <b>Visitors:</b>{j.visitors}<br/>
+        <b>Reviews:</b>{j.reviews}<br/>
+        <b>Address:</b>{j.address}<br/>
          
          
          
         </span>
       </Popup>
-    </Marker>
+    </CircleMarker>
       )) }
     
   </Map>
+  </div>
 );
 }
 }

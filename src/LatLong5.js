@@ -67,6 +67,7 @@ export default class Latlong5 extends React.Component {
     render() {
         return (
             <div className='mapBox'>
+            <br/><br/>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -80,14 +81,16 @@ export default class Latlong5 extends React.Component {
  <br />
                         
                         <b>Coordinates:</b><br/>18.0037762	,79.57475039999997<br/><br/>
-                        <b>Entry Fee:</b><br/>50<br/><br/>
+                        <b>Entry Fee:</b><br/>500<br/><br/>
                         <b>Timings:</b><br/>5am_to_5pm	<br/><br/>
                         <b>Visitors:</b><br/>500<br/><br/>
                         <b>Reviews:</b><br/>Famous historical temple <br/><br/>
                     </p>
                 </div>
+                <br/>
+                <br/>
                 <div id='pac-container'>
-                    <input id='pac-input' type='text' placeholder='Enter a location' />
+                   
                 </div>
                 <div id='map' />
             </div>

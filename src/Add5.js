@@ -11,6 +11,7 @@ import LatLong from './LatLong';
 import Gm from './Gm';
 import Chrt from './Chrt';
 import Sdel from './Sdel';
+import Sdel2 from './Sdel2';
 import {
     Route,
     NavLink,
@@ -21,7 +22,7 @@ import img10 from './Images/survey1.jpeg';
 //import "./Add.css";
 //import { Grid, Row, Col} from 'react-bootstrap';
 
-class Add2 extends React.Component {
+class Add5 extends React.Component {
     constructor() {
         super();
 
@@ -250,7 +251,9 @@ class Add2 extends React.Component {
                             </div>
                             <button><NavLink to="/Edform1">Add</NavLink></button><br></br><br/>
                             <button><NavLink to="/Gm">MapView</NavLink></button><br></br><br/>
-                            <button><NavLink to="/Chrt">Analyze</NavLink></button><br></br>
+                            <button><NavLink to="/Chrt">Analyze</NavLink></button><br></br><br/>
+                            <button><NavLink to="/Sdel2">Delete</NavLink></button><br></br><br/>
+                            <button><NavLink to="/Edform1">Update</NavLink></button><br></br><br/>
                             <img src={img10} height={200} width={400} />
                             <Route path="/Edform1" component={Edform1}/>
                             <Route path="/LatLong2" component={LatLong2} />
@@ -258,6 +261,7 @@ class Add2 extends React.Component {
                             <Route path="/LatLong4" component={LatLong4} />
                             <Route path="/LatLong5" component={LatLong5} />
                             <Route path="/Sdel" component={Sdel} />
+                            <Route path="/Sdel2" component={Sdel2} />
                             <Route path="/Gm" component={Gm} />
                             <Route path="/Chrt" component={Chrt} />
                            {/*<div class="panel-group">
@@ -287,4 +291,4 @@ class Add2 extends React.Component {
     }
 }
 
-export default Add2;
+export default Add5;

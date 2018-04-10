@@ -227,5 +227,41 @@ input[type=submit]:hover {
   box-sizing: border-box;
   background: rgba(0,0,0,.5);
 }
+.chartBox
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
+  height: 800px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: rgba(248, 245, 245, 0.993);
+}
+.surveyBox
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  height: 1000px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: rgba(248, 245, 245, 0.993);
+}
+.chartBox2
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
+  height: 1500px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: rgba(248, 245, 245, 0.993);
+}
 #mapid { height: 180px; }
 

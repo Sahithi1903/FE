@@ -19,7 +19,7 @@ class Edform1 extends Component {
             reviews: "",
             latitude: "",
             longitude: "",
-            survey_id:"",
+            survey_id: "",
 
             json: [],
         }
@@ -51,7 +51,7 @@ class Edform1 extends Component {
         var latitud = document.getElementById('latitude1').value;
         var longitud = document.getElementById('longitude1').value;
         var Login = require('./Login.js');
-        var survey_id=13;
+        var survey_id = 13;
         var accessToken = localStorage.getItem("accessToken");
         //var str=Login.data;
         //var accesstoken=JSON.stringify(str);
@@ -60,7 +60,7 @@ class Edform1 extends Component {
 
 
 
-        var form1 = JSON.stringify({ survey_id: survey_id,name: templenam, address: plac, timings: timing, visitors: visitor, fee: fee, reviews: reviews, latitude: latitud, longitude: longitud });
+        var form1 = JSON.stringify({ survey_id: survey_id, name: templenam, address: plac, timings: timing, visitors: visitor, fee: fee, reviews: reviews, latitude: latitud, longitude: longitud });
         fetch("http://10.10.200.39:9000/forms",
             {
 
@@ -130,7 +130,7 @@ class Edform1 extends Component {
     render() {
         return (
             <HashRouter>
-                <div>
+                <div className="surveyBox">
 
                     <div className="container">
                         <form onSubmit={this.handleSubmit}>
@@ -189,10 +189,11 @@ class Edform1 extends Component {
                                 onChange={this.handleLongitudeChange}
                                 value={this.state.longitude} />
 
-                            
+                            <button><NavLink to="/Latlong">FindLatLong</NavLink></button>
+
                             <div className="content">
 
-                                
+
                                 <Route path="/LatLong" component={LatLong} />
                             </div>
 
@@ -209,7 +210,7 @@ class Edform1 extends Component {
                             <input type="submit"
                                 value="Submit"
                             />
-                            <button><NavLink to="/Latlong">FindLatLong</NavLink></button><br></br>
+                            <br></br>
                         </form>
 
                     </div>

@@ -76,11 +76,13 @@ export default class Latlong extends React.Component {
                     <h1>State</h1>
                     <p>
                         
-                        <b>Accurate Address:</b><br/>{this.state.place_formatted}<br />
+                        <b>Accurate Address:</b><br/><br/>{this.state.place_formatted}<br /><br/><br/><br/>
                         
-                        <b>Coordinates:</b><br/>{this.state.place_location}
+                        <b>Coordinates:</b><br/><br/>{this.state.place_location}
                     </p>
                 </div>
+                <br/>
+                <br/>
                 <div id='pac-container'>
                     <input id='pac-input' type='text' placeholder='Enter a location' />
                 </div>

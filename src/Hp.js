@@ -20,6 +20,10 @@ import RoleUp from './RoleUp';
 import LatLong3 from './LatLong3';
 import LatLong4 from './LatLong4';
 import LatLong5 from './LatLong5';
+import Gm from './Gm';
+import Chrt from './Chrt';
+import Sdel from './Sdel';
+import Add5 from './Add5';
 
 
 
@@ -83,8 +87,12 @@ class Hp extends Component {
                                     <Route path="/RoleUp" component={RoleUp} />
                                     <Route path="/Hp2" component={Hp2}/>
                                     <Route path="/LatLong3" component={LatLong3} />
+                                    <Route path="/Gm" component={Gm} />
                             <Route path="/LatLong4" component={LatLong4} />
                             <Route path="/LatLong5" component={LatLong5} />
+                            <Route path="/Chrt" component={Chrt} />
+                            <Route path="/Sdel" component={Sdel} />
+                            <Route path="/Add5" component={Add5} />
                                     
                                     
                                 </div>
@@ -94,7 +102,7 @@ class Hp extends Component {
 
 
                     <div>
-                        <img src={img} />
+                        <img src={img} height={1300} width={3000} />
 
                     </div>
 

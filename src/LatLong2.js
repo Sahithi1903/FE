@@ -85,8 +85,9 @@ export default class Latlong2 extends React.Component {
                         <b>Reviews:</b><br/>One of the peaceful place in Hyderabad<br/><br/>
                     </p>
                 </div>
+                <br/><br/>
                 <div id='pac-container'>
-                    <input id='pac-input' type='text' placeholder='Enter a location' />
+                    
                 </div>
                 <div id='map' />
             </div>
